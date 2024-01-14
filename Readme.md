@@ -93,6 +93,34 @@ It keeps the code updated in docker image. whenever we do some changes locally i
 
 We have to configure this in compose.yml file.
 
+## Docker Build Image
+
+```
+> docker build -t [image_name] [path_to_dockerfile]
+
+#Example
+> docker build -t next-docker .
+```
+
+## Docker Run Image in Container
+
+```
+> docker run [image_name]
+
+#Example
+> docker run next-docker
+```
+
+## Docker Compose and Watch Command
+
+```
+# run the compose file
+> sudo docker compose up
+
+# it will look for the code changes
+> sudo docker compose watch
+```
+
 ## Publish Docker Image to Docker Hub
 
 - First Image should be created
@@ -108,12 +136,4 @@ We have to configure this in compose.yml file.
   > docker push smgv/react-docker
   ```
 
-## Docker Compose and Watch Command
-
-```
-# run the compose file
-> sudo docker compose up
-
-# it will look for the code changes
-> sudo docker compose watch
-```
+**_NOTE: If we get any error related to permission denied than use sudo or run terminal as administrator._**
