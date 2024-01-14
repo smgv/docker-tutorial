@@ -92,3 +92,28 @@ It keeps the code updated in docker image. whenever we do some changes locally i
 - Sync-Rebuild
 
 We have to configure this in compose.yml file.
+
+## Publish Docker Image to Docker Hub
+
+- First Image should be created
+- run the below command
+
+  ```
+  1. docker tag [image_name] [user_name]/[image_name]
+  2. docker push [user_name]/[image_name]
+
+  Example:
+
+  > docker tag react-docker smgv/react-docker
+  > docker push smgv/react-docker
+  ```
+
+## Docker Compose and Watch Command
+
+```
+# run the compose file
+> sudo docker compose up
+
+# it will look for the code changes
+> sudo docker compose watch
+```
