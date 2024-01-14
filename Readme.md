@@ -76,3 +76,19 @@ Important Concepts on which Docker's entire workflow revolves around:
 - Docker Client: UI
 - Docker Host (aka Docker Daemon): All process run here
 - Docker Registry (aka Docker Hub): Stores all Private and Public Images.
+
+## Docker Compose:
+
+Its a tool that allows us to define and manage multi container docker applications it uses .yaml file to configure the services, network and volumes for your applications enabling us to run and scale the entire application using single command.
+
+Using Docker Init CLI we can auto generate the file with all required tech and services.
+
+## Docker Compose Watch:
+
+It keeps the code updated in docker image. whenever we do some changes locally it will watch the change follow the below steps:
+
+- Sync
+- Rebuild
+- Sync-Rebuild
+
+We have to configure this in compose.yml file.
