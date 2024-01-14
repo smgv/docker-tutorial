@@ -125,3 +125,9 @@
   ```
    on code change it will also rebuild the docker for that we use -v “$(pwd):/app” and we use other flag -v to mount the node_modules so it can use the same node_modules instead of installing it again and again
   ```
+
+- ### rm ~/.docker/config.json
+
+  ```
+  when we get error related to the local metadata
+  ```
