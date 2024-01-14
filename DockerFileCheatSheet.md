@@ -10,7 +10,17 @@
     > FROM ubuntu:20.40
     ```
 
-2.  COPY [ --chown=< user >:< group > ] < src >... < dest >
+2.  WORKDIR /path/to/workdir
+
+    The WORKDIR instruction sets the working directory for any RUN, CMD, ENTRYPOINT, COPY and ADD instructions that follow it in the Dockerfile.
+
+    ```
+    Example
+
+    > WORKDIR /app
+    ```
+
+3.  COPY [ --chown=< user >:< group > ] < src >... < dest >
 
     Copies the file or dir from build context to images
 
@@ -20,7 +30,7 @@
     > COPY .  /app
     ```
 
-3.  RUN < command >
+4.  RUN < command >
 
     It execute commands in the shell during image build
 
@@ -30,7 +40,7 @@
     > RUN  npm run dev
     ```
 
-4.  EXPOSE < port > [ < port > / < protocol > ...]
+5.  EXPOSE < port > [ < port > / < protocol > ...]
 
     Expose inform docker that the container will listen on specified network PORT at runtime
 
@@ -40,7 +50,7 @@
     > EXPOSE  3000
     ```
 
-5.  ENV KEY=VALUE
+6.  ENV KEY=VALUE
 
     ENV set the environment variable during the build process
 
@@ -50,7 +60,7 @@
     > ENV  NODE_ENV=production
     ```
 
-6.  ARG < name >[ = < default value >]
+7.  ARG < name >[ = < default value >]
 
     ARG defines build time variables like having a note.
 
@@ -60,7 +70,7 @@
     > ARG  NODE_VERSION=20
     ```
 
-7.  VOLUME ["/data"]
+8.  VOLUME ["/data"]
 
     Volume creates a mount point for externally mounted volume
 
@@ -70,7 +80,7 @@
     > VOLUME  /myvol
     ```
 
-8.  CMD ["npm", "run", "dev"]
+9.  CMD ["npm", "run", "dev"]
 
     CMD provides default command to execute when the container starts
 
@@ -80,15 +90,16 @@
     > CMD  npm run dev
     ```
 
-9.  ENTRYPOINT
+10. ENTRYPOINT
 
-        ENTRYPOINT is the default command to execute when the container starts
+    ENTRYPOINT is the default command to execute when the container starts
 
-        ```
-        Example
+    ```
+    Example
 
-        > CMD  npm run dev
-        ```
+    > CMD  npm run dev
+    ```
+
 
     CMD !== ENTRYPOINT
 
